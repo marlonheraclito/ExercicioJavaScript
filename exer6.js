@@ -3,14 +3,24 @@
 let idade = 10
 let cartaConducao = false
 
-switch (idade && cartaConducao) {
-    case idade >= 18 && cartaConducao == false:
+let estado
+
+if (idade >= 18 && cartaConducao == false) {
+    estado = 'talvez'
+} else if (idade >= 18 && cartaConducao == true) {
+    estado = 'sim'
+} else {
+    estado = 'nao'
+}
+
+switch (estado) {
+    case 'talvez':
         console.log('Pode ter carta de conducao')
         break;
-    case idade >= 18 && cartaConducao == true:
+    case 'sim':
         console.log('Pode conduzir')
         break;
-    case idade < 18 && cartaConducao == false:
+    case 'nao':
         console.log('Nao pode conduzir')
         break;
     default:
